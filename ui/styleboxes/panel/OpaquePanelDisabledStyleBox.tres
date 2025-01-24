@@ -1,0 +1,23 @@
+[gd_resource type="StyleBox" script_class="DecoratedStyleBox" load_steps=3 format=3 uid="uid://b1758nb8lspx7"]
+
+[ext_resource type="Material" uid="uid://b2mv00fv4xlp6" path="res://ui/shaders/DecoratedPanelMaterial.tres" id="1_drvrd"]
+[ext_resource type="Script" path="res://ui/styleboxes/base/DecoratedStyleBox.cs" id="2_qqeei"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 8.0
+content_margin_top = 4.5
+content_margin_right = 8.0
+content_margin_bottom = 4.5
+script = ExtResource("2_qqeei")
+BackgroundColor = Color(0.37, 0.37, 0.37, 1)
+BorderColor = Color(0.16, 0.16, 0.16, 1)
+BorderThickness = 1.5
+AutoAdjustContentMargins = false
+Animated = false
+Duration = 1.0
+HighlightColor = Color(0, 0, 0, 0)
+Loop = true
+Mode = 0
+Material = ExtResource("1_drvrd")

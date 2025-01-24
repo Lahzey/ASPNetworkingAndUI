@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://icmuhsqdit8s"]
+
+[ext_resource type="Shader" path="res://ui/shaders/DecoratedPanelShader.gdshader" id="1_wfbhk"]
+[ext_resource type="Texture2D" uid="uid://wqqmv8s0ju0h" path="res://noises/perlin_tileable.png" id="2_gm3d6"]
+
+[resource]
+shader = ExtResource("1_wfbhk")
+shader_parameter/background_color = Color(0.105882, 0.2, 0.266667, 1)
+shader_parameter/border_color = Color(0.0627451, 0.117647, 0.156863, 1)
+shader_parameter/animated = null
+shader_parameter/animation_duration = null
+shader_parameter/highlight_color = null
+shader_parameter/loop_animation = null
+shader_parameter/animation_mode = null
+shader_parameter/start_time = null
+shader_parameter/noise_scale = 0.5
+shader_parameter/noise_texture = ExtResource("2_gm3d6")

@@ -1,0 +1,23 @@
+[gd_resource type="StyleBox" script_class="DecoratedStyleBox" load_steps=3 format=3 uid="uid://h7mavon4r2lt"]
+
+[ext_resource type="Material" uid="uid://icmuhsqdit8s" path="res://ui/shaders/DecoratedButtonMaterial.tres" id="1_t0frn"]
+[ext_resource type="Script" path="res://ui/styleboxes/base/DecoratedStyleBox.cs" id="2_k42cf"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 4.5
+content_margin_top = 4.5
+content_margin_right = 4.5
+content_margin_bottom = 4.5
+script = ExtResource("2_k42cf")
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BorderColor = Color(0.309804, 0.427451, 0.509804, 1)
+BorderThickness = 1.5
+AutoAdjustContentMargins = true
+Animated = true
+Duration = 2.0
+HighlightColor = Color(0.537255, 0.384314, 0.25098, 1)
+Loop = true
+Mode = 1
+Material = ExtResource("1_t0frn")

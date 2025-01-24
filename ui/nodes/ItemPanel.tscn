@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ok6a2oushxkx"]
+
+[ext_resource type="Script" path="res://ui/nodes/ItemPanel.cs" id="1_111j8"]
+[ext_resource type="PackedScene" uid="uid://djhlvkau0rofm" path="res://ui/nodes/DecoratedPanel.tscn" id="1_aeoic"]
+[ext_resource type="Texture2D" uid="uid://0kae80uqp7ka" path="res://items/icons/bow.png" id="1_g2kyx"]
+
+[node name="ItemPanel" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = -1107.0
+offset_bottom = -619.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_111j8")
+
+[node name="DecoratedPanel" parent="." instance=ExtResource("1_aeoic")]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_g2kyx")
+expand_mode = 3

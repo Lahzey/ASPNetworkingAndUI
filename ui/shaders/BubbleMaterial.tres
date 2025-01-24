@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://rbt7xtde8ysw"]
+
+[ext_resource type="Shader" path="res://ui/shaders/BubbleShader.gdshader" id="1_u257e"]
+[ext_resource type="Texture2D" uid="uid://c7ufi1rc4rtvf" path="res://noises/voronoi_tileable.png" id="2_njx06"]
+[ext_resource type="Texture2D" uid="uid://wqqmv8s0ju0h" path="res://noises/perlin_tileable.png" id="2_ql3u2"]
+
+[resource]
+shader = ExtResource("1_u257e")
+shader_parameter/background_color = Color(0.807843, 0.576471, 0.372549, 1)
+shader_parameter/background_noise_scale = 2.28
+shader_parameter/bubble_color = Color(0.244238, 0.274794, 0.340484, 0.313726)
+shader_parameter/bubble_size = 0.07
+shader_parameter/bubble_noise_scale = 1.255
+shader_parameter/bubble_noise_texture = ExtResource("2_njx06")
+shader_parameter/background_texture = ExtResource("2_ql3u2")

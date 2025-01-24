@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+  <linearGradient id="a" x2="0" y2="16" gradientUnits="userSpaceOnUse">
+    <stop offset="0.188" stop-color="#ff4545"/>
+    <stop stop-color="#ffe345"/>
+    <stop offset="0.313" stop-color="#ffe345"/>
+    <stop stop-color="#80ff45"/>
+    <stop offset="0.438" stop-color="#80ff45"/>
+    <stop stop-color="#45ffa2"/>
+    <stop offset="0.563" stop-color="#45ffa2"/>
+    <stop stop-color="#45d7ff"/>
+    <stop offset="0.688" stop-color="#45d7ff"/>
+    <stop stop-color="#8045ff"/>
+    <stop offset="0.813" stop-color="#8045ff"/>
+    <stop stop-color="#ff4596"/>
+  </linearGradient>
+  <path fill="url(#a)" d="M 12 7 C 11.571 7.746 11.054 8.387 10.571 9 C 10 9.69 9.505 10.342 9.231 11 C 9.093 11.326 9 11.656 9 12 C 9 12.344 9.072 12.686 9.184 13 C 9.597 14.163 10.696 15 12 15 C 13.304 15 14.402 14.163 14.816 13 C 14.928 12.686 15 12.344 15 12 C 15 11.656 14.906 11.326 14.769 11 C 14.494 10.342 13.999 9.69 13.429 9 C 12.945 8.387 12.429 7.746 11.999 7 L 12 7 Z"/>
+  <path fill="url(#a)" d="
+	M 7 15
+	A 7 7  0  1 1  15 7
+	L 13 7
+	A 5 5  0  1 0  7 13
+	L 8.5 15
+	L 7 15
+  "/>
+</svg>

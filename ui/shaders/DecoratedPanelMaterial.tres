@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b2mv00fv4xlp6"]
+
+[ext_resource type="Shader" path="res://ui/shaders/DecoratedPanelShader.gdshader" id="1_wfbhk"]
+[ext_resource type="Texture2D" uid="uid://ptgwf5fsvf6a" path="res://noises/metal_tileable.jpg" id="2_kevx6"]
+
+[resource]
+shader = ExtResource("1_wfbhk")
+shader_parameter/background_color = Color(0.105882, 0.2, 0.266667, 1)
+shader_parameter/border_color = Color(0.0627451, 0.117647, 0.156863, 1)
+shader_parameter/animated = null
+shader_parameter/animation_duration = null
+shader_parameter/highlight_color = null
+shader_parameter/loop_animation = null
+shader_parameter/animation_mode = null
+shader_parameter/start_time = null
+shader_parameter/noise_scale = 0.5
+shader_parameter/noise_texture = ExtResource("2_kevx6")

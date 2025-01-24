@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxFlat" format=3 uid="uid://c5wkqrh3c8301"]
+
+[resource]
+draw_center = false
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.807843, 0.576471, 0.372549, 1)
+border_blend = true
+expand_margin_left = 5.0
+expand_margin_right = 5.0
