@@ -6,15 +6,15 @@
 [resource]
 resource_local_to_scene = false
 resource_name = ""
-content_margin_left = 4.5
+content_margin_left = 8.0
 content_margin_top = 4.5
-content_margin_right = 4.5
+content_margin_right = 8.0
 content_margin_bottom = 4.5
 script = ExtResource("2_fk4di")
 BackgroundColor = Color(0.27, 0.27, 0.27, 1)
 BorderColor = Color(0.16, 0.16, 0.16, 1)
 BorderThickness = 1.5
-AutoAdjustContentMargins = true
+AutoAdjustContentMargins = false
 Animated = false
 Duration = 1.0
 HighlightColor = Color(0, 0, 0, 0)

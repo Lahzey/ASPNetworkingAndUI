@@ -54,7 +54,6 @@ public partial class StyleBoxMaterial : StyleBox {
     }
 
     private void OnFirstDraw(CanvasItem canvasItem) {
-        GD.Print("First draw of " + canvasItem.GetCanvasItem());
         Rid rid = canvasItem.GetCanvasItem();
         if (!CANVAS_STYLE_BOXES.ContainsKey(rid)) {
             CANVAS_STYLE_BOXES[rid] = new List<StyleBoxMaterial>();
@@ -66,7 +65,6 @@ public partial class StyleBoxMaterial : StyleBox {
 
     // this method will not be called if the item is removed (and deleted) instead of just the style box changing, leaving a leftover value hasDrawn (should be fine though)
     private void AfterLastDraw(CanvasItem canvasItem) {
-        GD.Print("Last draw of " + canvasItem.GetCanvasItem());
         Rid rid = canvasItem.GetCanvasItem();
         CANVAS_STYLE_BOXES[rid].Remove(this);
         if (CANVAS_STYLE_BOXES[rid].Count == 0) {
@@ -86,7 +84,6 @@ public partial class StyleBoxMaterial : StyleBox {
     // Source (I am pretty sure this has not yet been fixed): https://github.com/godotengine/godot/issues/51578
     public override void _Draw(Rid toCanvasItem, Rect2 rect) {
         SOME_REF = this;
-        GD.Print("Draw");
         EnsurePredrawHooked();
         if (IsInstanceValid(Material)) {
             CanvasItem canvasItem = GetCurrentItemDrawn();

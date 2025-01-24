@@ -6,17 +6,17 @@
 [resource]
 resource_local_to_scene = false
 resource_name = ""
-content_margin_left = 4.5
+content_margin_left = 8.0
 content_margin_top = 4.5
-content_margin_right = 4.5
+content_margin_right = 8.0
 content_margin_bottom = 4.5
 script = ExtResource("2_f0obx")
 BackgroundColor = Color(0.315978, 0.505247, 0.640937, 1)
 BorderColor = Color(0.309804, 0.427451, 0.509804, 1)
 BorderThickness = 1.5
-AutoAdjustContentMargins = true
+AutoAdjustContentMargins = false
 Animated = true
-Duration = 0.25
+Duration = 2.0
 HighlightColor = Color(0.537255, 0.384314, 0.25098, 1)
 Loop = false
 Mode = 0
