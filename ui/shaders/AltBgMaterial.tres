@@ -1,6 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cy8rvnmqdwpv4"]
-
-[ext_resource type="Shader" path="res://ui/shaders/AltBgShader.gdshader" id="1_wqaqr"]
-
-[resource]
-shader = ExtResource("1_wqaqr")
