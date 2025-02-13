@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ok6a2oushxkx"]
+
+[ext_resource type="Script" path="res://example/nodes/ItemPanel.cs" id="1_111j8"]
+[ext_resource type="StyleBox" uid="uid://disx7ybng4uof" path="res://example/styles/ItemPanelNormal.tres" id="1_nqkdl"]
+[ext_resource type="StyleBox" uid="uid://d15a1k7ul5bco" path="res://example/styles/ItemPanelCraftHover.tres" id="3_u4c1x"]
+
+[node name="ItemPanel" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = -1100.0
+offset_bottom = -612.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_nqkdl")
+script = ExtResource("1_111j8")
+CraftHoverStyle = ExtResource("3_u4c1x")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 3

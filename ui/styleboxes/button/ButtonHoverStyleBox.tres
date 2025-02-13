@@ -1,23 +1,37 @@
-[gd_resource type="StyleBox" script_class="DecoratedStyleBox" load_steps=3 format=3 uid="uid://dbal710ytebmb"]
+[gd_resource type="StyleBox" script_class="StyleBoxDecorated" load_steps=5 format=3 uid="uid://dbal710ytebmb"]
 
-[ext_resource type="Material" uid="uid://icmuhsqdit8s" path="res://ui/shaders/DecoratedButtonMaterial.tres" id="1_dkv3c"]
-[ext_resource type="Script" path="res://ui/styleboxes/base/DecoratedStyleBox.cs" id="2_a020v"]
+[ext_resource type="Material" uid="uid://icmuhsqdit8s" path="res://ui/shaders/DecoratedButtonMaterial.tres" id="1_ejyfr"]
+[ext_resource type="Script" path="res://ui/scripts/StyleBoxDecorated.cs" id="1_h21yw"]
+[ext_resource type="Script" path="res://ui/scripts/PolygonInfo.cs" id="1_tsmb5"]
+
+[sub_resource type="Resource" id="Resource_a4r8y"]
+script = ExtResource("1_tsmb5")
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BorderColor = Color(0.309804, 0.427451, 0.509804, 1)
+BorderThickness = 6.0
+PolygonPoints = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
 
 [resource]
 resource_local_to_scene = false
 resource_name = ""
-content_margin_left = 4.5
-content_margin_top = 4.5
-content_margin_right = 4.5
-content_margin_bottom = 4.5
-script = ExtResource("2_a020v")
-BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
-BorderColor = Color(0.309804, 0.427451, 0.509804, 1)
-BorderThickness = 1.5
-AutoAdjustContentMargins = true
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+script = ExtResource("1_h21yw")
+UseOutlineRectBorderPattern = true
 Animated = false
 Duration = 1.0
 HighlightColor = Color(0, 0, 0, 0)
 Loop = true
 Mode = 0
-Material = ExtResource("1_dkv3c")
+Material = ExtResource("1_ejyfr")
+BackgroundMode = 2
+BackgroundRelativeRect = Rect2(0, 0, 0, 0)
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BackgroundPolygon = SubResource("Resource_a4r8y")
+RelativeContentMargins = true
+AdditionalContentMarginLeft = 4.0
+AdditionalContentMarginTop = 2.0
+AdditionalContentMarginRight = 4.0
+AdditionalContentMarginBottom = 2.0

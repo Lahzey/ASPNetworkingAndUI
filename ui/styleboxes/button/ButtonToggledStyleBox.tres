@@ -1,23 +1,37 @@
-[gd_resource type="StyleBox" script_class="DecoratedStyleBox" load_steps=3 format=3 uid="uid://bada086yrwnpp"]
+[gd_resource type="StyleBox" script_class="StyleBoxDecorated" load_steps=5 format=3 uid="uid://bada086yrwnpp"]
 
-[ext_resource type="Material" uid="uid://icmuhsqdit8s" path="res://ui/shaders/DecoratedButtonMaterial.tres" id="1_c1a5w"]
-[ext_resource type="Script" path="res://ui/styleboxes/base/DecoratedStyleBox.cs" id="2_slh8g"]
+[ext_resource type="Script" path="res://ui/scripts/PolygonInfo.cs" id="1_72k4o"]
+[ext_resource type="Material" uid="uid://icmuhsqdit8s" path="res://ui/shaders/DecoratedButtonMaterial.tres" id="1_ifsno"]
+[ext_resource type="Script" path="res://ui/scripts/StyleBoxDecorated.cs" id="1_k7hu3"]
+
+[sub_resource type="Resource" id="Resource_b5kgh"]
+script = ExtResource("1_72k4o")
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BorderColor = Color(0.0627451, 0.117647, 0.156863, 1)
+BorderThickness = 6.0
+PolygonPoints = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
 
 [resource]
 resource_local_to_scene = false
 resource_name = ""
-content_margin_left = 4.5
-content_margin_top = 4.5
-content_margin_right = 4.5
-content_margin_bottom = 4.5
-script = ExtResource("2_slh8g")
-BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
-BorderColor = Color(0.0627451, 0.117647, 0.156863, 1)
-BorderThickness = 1.5
-AutoAdjustContentMargins = true
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+script = ExtResource("1_k7hu3")
+UseOutlineRectBorderPattern = true
 Animated = true
 Duration = 2.0
-HighlightColor = Color(0.537255, 0.384314, 0.25098, 1)
+HighlightColor = Color(0.658824, 0.482353, 0.329412, 1)
 Loop = true
 Mode = 1
-Material = ExtResource("1_c1a5w")
+Material = ExtResource("1_ifsno")
+BackgroundMode = 2
+BackgroundRelativeRect = Rect2(0, 0, 0, 0)
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BackgroundPolygon = SubResource("Resource_b5kgh")
+RelativeContentMargins = true
+AdditionalContentMarginLeft = 4.0
+AdditionalContentMarginTop = 2.0
+AdditionalContentMarginRight = 4.0
+AdditionalContentMarginBottom = 2.0

@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=3 uid="uid://dvn01a2wm5hk7"]
+
+[ext_resource type="PackedScene" uid="uid://nejtmsv00okl" path="res://example/nodes/InventoryPanel.tscn" id="1_gvhmu"]
+[ext_resource type="Script" path="res://ui/scripts/PolygonInfo.cs" id="2_22jeo"]
+[ext_resource type="Material" uid="uid://b2mv00fv4xlp6" path="res://ui/shaders/DecoratedPanelMaterial.tres" id="3_e4qrk"]
+[ext_resource type="Script" path="res://ui/scripts/StyleBoxDecorated.cs" id="4_ckiqs"]
+[ext_resource type="StyleBox" uid="uid://cj2c2dpifqgjp" path="res://example/styles/ExpandCollapseButtonNormal.tres" id="5_h5ap4"]
+[ext_resource type="StyleBox" uid="uid://ci4tlgcab3jvv" path="res://example/styles/ExpandCollapseButtonHover.tres" id="5_r4pdu"]
+[ext_resource type="StyleBox" uid="uid://c0yebqf41arp2" path="res://example/styles/ExpandCollapseButtonPressed.tres" id="6_7nw5l"]
+[ext_resource type="Script" path="res://example/nodes/ExpandCollapseButton.cs" id="8_m2q36"]
+[ext_resource type="PackedScene" uid="uid://b20qdtptl1g83" path="res://example/nodes/CraftingPreview.tscn" id="9_lduls"]
+[ext_resource type="StyleBox" uid="uid://b54tuvwlanu7t" path="res://ui/styleboxes/panel/PopupStyleBox.tres" id="10_b302c"]
+[ext_resource type="PackedScene" uid="uid://ddcvggmk12mbu" path="res://example/nodes/ContextMenu.tscn" id="11_inhup"]
+
+[sub_resource type="Resource" id="Resource_hkkpe"]
+script = ExtResource("2_22jeo")
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BorderColor = Color(0.0627451, 0.117647, 0.156863, 1)
+BorderThickness = 6.0
+PolygonPoints = PackedVector2Array(0, -50, 1, 0, 1, 1, 0, 51)
+
+[sub_resource type="StyleBox" id="StyleBox_gt68t"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 10.0
+content_margin_top = 56.0
+content_margin_right = 10.0
+content_margin_bottom = 56.0
+script = ExtResource("4_ckiqs")
+UseOutlineRectBorderPattern = true
+Animated = false
+Duration = 1.0
+HighlightColor = Color(0, 0, 0, 0)
+Loop = true
+Mode = 0
+Material = ExtResource("3_e4qrk")
+BackgroundMode = 2
+BackgroundRelativeRect = Rect2(0, 0, 0, 0)
+BackgroundColor = Color(1, 1, 1, 1)
+BackgroundPolygon = SubResource("Resource_hkkpe")
+RelativeContentMargins = true
+AdditionalContentMarginLeft = 4.0
+AdditionalContentMarginTop = 50.0
+AdditionalContentMarginRight = 4.0
+AdditionalContentMarginBottom = 50.0
+
+[sub_resource type="Animation" id="Animation_0t7c8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:AnimationProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_krtae"]
+resource_name = "animate"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:AnimationProgress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.203063),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qvjp"]
+_data = {
+"RESET": SubResource("Animation_0t7c8"),
+"animate": SubResource("Animation_krtae")
+}
+
+[node name="InGameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -83.5
+offset_right = 70.0
+offset_bottom = 83.5
+grow_vertical = 2
+theme_override_constants/separation = -6
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBox_gt68t")
+
+[node name="Inventory" parent="MarginContainer/PanelContainer" instance=ExtResource("1_gvhmu")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer" node_paths=PackedStringArray("Target", "AnimationPlayer")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.952941, 0.843137, 0.74902, 1)
+theme_override_colors/font_hover_color = Color(0.807843, 0.576471, 0.372549, 1)
+theme_override_colors/font_pressed_color = Color(0.953667, 0.842243, 0.75083, 1)
+theme_override_colors/font_focus_color = Color(0.807843, 0.576471, 0.372549, 1)
+theme_override_colors/font_color = Color(0.309804, 0.427451, 0.509804, 1)
+theme_override_styles/hover_pressed = ExtResource("6_7nw5l")
+theme_override_styles/hover = ExtResource("5_r4pdu")
+theme_override_styles/pressed = ExtResource("6_7nw5l")
+theme_override_styles/normal = ExtResource("5_h5ap4")
+text = "<"
+script = ExtResource("8_m2q36")
+Target = NodePath("..")
+CollapsedX = 16.0
+ExpandedX = -6.0
+AnimationPlayer = NodePath("OpenClosePlayer")
+
+[node name="OpenClosePlayer" type="AnimationPlayer" parent="MarginContainer/Button"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_8qvjp")
+}
+
+[node name="CraftingPreview" parent="." instance=ExtResource("9_lduls")]
+layout_mode = 2
+offset_right = 264.0
+theme_override_styles/panel = ExtResource("10_b302c")
+
+[node name="ContextMenu" parent="." instance=ExtResource("11_inhup")]
+layout_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 263.0
+offset_right = 583.0
+offset_bottom = 416.0
+text = "<- Drag and drop items in the UI
+Hover components for 2 sec then drop to craft
+Right click for more options
+Dropped items appear in chest
+You may open and close inventory to view performance of rendering in animations"

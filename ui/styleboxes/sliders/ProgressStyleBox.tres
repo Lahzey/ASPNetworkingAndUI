@@ -1,6 +1,6 @@
 [gd_resource type="StyleBox" script_class="StyleBoxMaterial" load_steps=3 format=3 uid="uid://bcs7yykr636d4"]
 
-[ext_resource type="Script" path="res://ui/styleboxes/base/StyleBoxMaterial.cs" id="1_7v6ou"]
+[ext_resource type="Script" path="res://ui/scripts/StyleBoxMaterial.cs" id="1_7v6ou"]
 [ext_resource type="Material" uid="uid://rbt7xtde8ysw" path="res://ui/shaders/BubbleMaterial.tres" id="1_m7gqq"]
 
 [resource]

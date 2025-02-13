@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemConfig" load_steps=5 format=3 uid="uid://bgwyqfgkiqjgm"]
+
+[ext_resource type="Resource" uid="uid://b3mge04s17ukk" path="res://example/items/types/Bow.tres" id="1_bxtrq"]
+[ext_resource type="Script" path="res://example/logic/ItemConfig.cs" id="1_yr8y6"]
+[ext_resource type="Resource" uid="uid://cbsrcs05kws10" path="res://example/items/types/Bowstring.tres" id="2_sfmrf"]
+[ext_resource type="Resource" uid="uid://b2tskyuqk78ej" path="res://example/items/types/UnfinishedBow.tres" id="3_6h0ak"]
+
+[resource]
+script = ExtResource("1_yr8y6")
+ItemTypes = Array[Object]([ExtResource("1_bxtrq"), ExtResource("2_sfmrf"), ExtResource("3_6h0ak")])

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+  <path fill="#000000" fill-opacity="0" stroke="#4F6D82" stroke-width="1" d="
+	M 2.5 0.5
+	L 17.5 0.5
+	L 17.5 19.5
+	L 2.5 19.5
+	L 2.5 0
+  "/>
+  <path fill="#000000" fill-opacity="0" stroke="#4F6D82" stroke-width="1" d="
+	M 0.5 2.5
+	L 19.5 2.5
+	L 19.5 17.5
+	L 0.5 17.5
+	L 0.5 2
+  "/>
+  <path fill="#1B3344" d="
+	M 3 3
+	L 17 3
+	L 17 17
+	L 3 17
+	L 3 3
+  "/>
+  <path fill="#000000" fill-opacity="0" stroke="#896240" stroke-width="2" d="
+	M 5 10
+	L 8 13
+	L 15 6
+  "/>
+</svg>

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://b3mge04s17ukk"]
+
+[ext_resource type="Script" path="res://example/logic/ItemType.cs" id="1_o23kc"]
+[ext_resource type="Texture2D" uid="uid://0kae80uqp7ka" path="res://example/items/icons/bow.png" id="1_ov5ne"]
+[ext_resource type="Resource" uid="uid://cbsrcs05kws10" path="res://example/items/types/Bowstring.tres" id="1_prln4"]
+[ext_resource type="Resource" uid="uid://b2tskyuqk78ej" path="res://example/items/types/UnfinishedBow.tres" id="2_e2asx"]
+
+[resource]
+script = ExtResource("1_o23kc")
+Name = "Bow"
+Description = "Allows the holder to attack from a distance."
+Icon = ExtResource("1_ov5ne")
+CraftedFromA = ExtResource("1_prln4")
+CraftedFromB = ExtResource("2_e2asx")

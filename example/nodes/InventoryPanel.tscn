@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://nejtmsv00okl"]
+
+[ext_resource type="Script" path="res://example/nodes/PlayerInventoryPanel.cs" id="1_wq7fh"]
+[ext_resource type="PackedScene" uid="uid://ok6a2oushxkx" path="res://example/nodes/ItemPanel.tscn" id="2_ok8ko"]
+
+[node name="Inventory" type="GridContainer"]
+script = ExtResource("1_wq7fh")
+ItemPanelScene = ExtResource("2_ok8ko")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://cbsrcs05kws10"]
+
+[ext_resource type="Script" path="res://example/logic/ItemType.cs" id="1_eedc5"]
+[ext_resource type="Texture2D" uid="uid://b1n1lunl08fca" path="res://example/items/icons/bowstring.png" id="1_kw0ta"]
+
+[resource]
+script = ExtResource("1_eedc5")
+Name = "Bowstring"
+Description = "On its own it might be enough to strange someone, but is best combined into a finished weapon."
+Icon = ExtResource("1_kw0ta")

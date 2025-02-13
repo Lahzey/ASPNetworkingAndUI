@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://brgin6fi13d8"]
+
+[ext_resource type="Texture2D" uid="uid://c8lg3mueso13b" path="res://ui/icons/StyleBoxConditional.svg" id="1_r8p6v"]
+[ext_resource type="Texture2D" uid="uid://bsi2ungpx44js" path="res://ui/icons/StyleBoxDecorated.svg" id="2_d0kht"]
+[ext_resource type="Texture2D" uid="uid://dria3km1offpx" path="res://ui/icons/StyleBoxMaterial.svg" id="3_3w5ou"]
+
+[node name="AdvancedThemePreview" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VFlowContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VFlowContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Panel Container"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VFlowContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VFlowContainer/CenterContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VFlowContainer/CenterContainer"]
+layout_mode = 2
+text = "Normal Panel
+"
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+position = Vector2i(350, 0)
+size = Vector2i(300, 100)
+visible = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPanel"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 293.0
+offset_bottom = 93.0
+bbcode_enabled = true
+text = "[b][color=CE935F]Popup Panel[/color][/b]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt blandit lacus vel convallis. Mauris tristique quam sit amet velit dictum sollicitudin. Nam eget finibus nisi, vitae laoreet metus.
+
+Nulla vel nulla augue. Nam sed molestie magna, luctus volutpat ante. Praesent semper dui eu varius mattis. "
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+position = Vector2i(350, 120)
+size = Vector2i(169, 184)
+visible = true
+unfocusable = true
+item_count = 6
+item_0/text = "Popup Menu"
+item_0/separator = true
+item_1/text = "Element 1"
+item_1/icon = ExtResource("1_r8p6v")
+item_1/checkable = 1
+item_1/id = 1
+item_2/text = "Element 2"
+item_2/icon = ExtResource("2_d0kht")
+item_2/checkable = 2
+item_2/id = 2
+item_3/text = "Element 3"
+item_3/icon = ExtResource("3_3w5ou")
+item_3/checkable = 2
+item_3/id = 3
+item_4/text = "Element 4"
+item_4/id = 4
+item_5/id = 5
+item_5/separator = true

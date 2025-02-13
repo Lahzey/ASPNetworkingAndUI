@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfkvnluepsgq5"]
+
+[ext_resource type="Material" uid="uid://b7oiyh4ok6o55" path="res://example/materials/floor.tres" id="1_wx4ml"]
+[ext_resource type="PackedScene" uid="uid://bdo0epfwbg34r" path="res://example/nodes/Player.tscn" id="2_1yuil"]
+[ext_resource type="PackedScene" uid="uid://dvn01a2wm5hk7" path="res://example/nodes/InGameUI.tscn" id="3_1lmoj"]
+[ext_resource type="Resource" uid="uid://bgwyqfgkiqjgm" path="res://example/items/ItemConfig.tres" id="3_jxkn6"]
+[ext_resource type="PackedScene" uid="uid://c20tjmw0s2ete" path="res://example/nodes/Chest.tscn" id="5_42tgo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8o4k"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_22irf"]
+size = Vector2(100, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0248334, 0.999692, 0, -0.39273, -0.00975583, 0.919602, 0.919319, 0.0228369, 0.392851, 0, 26.5669, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.641878, 0.766807, 0, -0.766807, 0.641878, 0, 15.695, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_l8o4k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+material_override = ExtResource("1_wx4ml")
+mesh = SubResource("PlaneMesh_22irf")
+
+[node name="Player" parent="." instance=ExtResource("2_1yuil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0507183, 6.98412, -5.33351)
+ItemConfig = ExtResource("3_jxkn6")
+
+[node name="InGameUi" parent="." instance=ExtResource("3_1lmoj")]
+
+[node name="Chest" parent="." instance=ExtResource("5_42tgo")]
+transform = Transform3D(-0.135409, 0, 2.99694, 0, 3, 0, -2.99694, 0, -0.135409, 7.66884, 0.0499992, -11.926)

@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://c20tjmw0s2ete"]
+
+[ext_resource type="Script" path="res://example/nodes/Chest.cs" id="1_i78w3"]
+[ext_resource type="Script" path="res://example/nodes/FollowCanvas.cs" id="2_8t7d3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_evyrk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3tucx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ep5i"]
+viewport_path = NodePath("UIViewport")
+
+[sub_resource type="Animation" id="Animation_xub3v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LidPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -2.18166)]
+}
+
+[sub_resource type="Animation" id="Animation_vwjuu"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LidPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.73208, 1),
+"update": 0,
+"values": [Vector3(0, 0, -2.18166), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2heap"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LidPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.153893),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -2.18166)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t7ucx"]
+_data = {
+"RESET": SubResource("Animation_xub3v"),
+"close": SubResource("Animation_vwjuu"),
+"open": SubResource("Animation_2heap")
+}
+
+[node name="Chest" type="Node3D" node_paths=PackedStringArray("OpenButton", "AnimationPlayer")]
+script = ExtResource("1_i78w3")
+OpenButton = NodePath("FollowCanvas/OpenButton")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_evyrk")
+
+[node name="Wall1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.09278e-08, -0.05, 0, 0.25, -2.18557e-09, 0, 0, 0, 1, 0.224885, 0.149905, 0)
+mesh = SubResource("BoxMesh_evyrk")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.09278e-08, -0.05, 0, 0.25, -2.18557e-09, 0, 0, 0, 1, -0.225099, 0.149905, 0)
+mesh = SubResource("BoxMesh_evyrk")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.24379e-12, 1.48407e-05, -0.403231, 0.25, -2.186e-09, 0, -1.09278e-08, -0.0500099, -0.000119661, -0.000297084, 0.149905, 0.4751)
+mesh = SubResource("BoxMesh_evyrk")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.24379e-12, 1.48407e-05, -0.403231, 0.25, -2.186e-09, 0, -1.09278e-08, -0.0500099, -0.000119661, -0.001, 0.15, -0.475)
+mesh = SubResource("BoxMesh_evyrk")
+
+[node name="LidPivot" type="Node3D" parent="."]
+transform = Transform3D(-0.573575, 0.819153, 0, -0.819153, -0.573575, 0, 0, 0, 1, 0.245, 0.275813, 0)
+
+[node name="Lid" type="MeshInstance3D" parent="LidPivot"]
+transform = Transform3D(0.5, 0, 0, 0, 0.05, 0, 0, 0, 1, -0.245, 0.0241871, 0)
+mesh = SubResource("PrismMesh_3tucx")
+skeleton = NodePath("../..")
+
+[node name="UIViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="UISprite" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -0.987927, 0.098926, 0)
+texture = SubResource("ViewportTexture_5ep5i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t7ucx")
+}
+
+[node name="FollowCanvas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.274328, 0)
+script = ExtResource("2_8t7d3")
+Attachment = 1
+
+[node name="OpenButton" type="Button" parent="FollowCanvas"]
+offset_top = 25.0
+offset_right = 70.0
+offset_bottom = 64.0
+size_flags_vertical = 8
+disabled = true
+text = "Empty"

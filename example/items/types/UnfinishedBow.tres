@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://b2tskyuqk78ej"]
+
+[ext_resource type="Texture2D" uid="uid://bhb3hek6io0s7" path="res://example/items/icons/unfinished_bow.png" id="1_0tfwc"]
+[ext_resource type="Script" path="res://example/logic/ItemType.cs" id="1_qgdg6"]
+
+[resource]
+script = ExtResource("1_qgdg6")
+Name = "Unfinished Bow"
+Description = "Without a bowstring this is just a stick. Might still hurt if you hit someone hard enough with it."
+Icon = ExtResource("1_0tfwc")

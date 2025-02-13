@@ -1,0 +1,37 @@
+[gd_resource type="StyleBox" script_class="StyleBoxDecorated" load_steps=5 format=3 uid="uid://b54tuvwlanu7t"]
+
+[ext_resource type="Script" path="res://ui/scripts/PolygonInfo.cs" id="1_s23n5"]
+[ext_resource type="Material" uid="uid://b2mv00fv4xlp6" path="res://ui/shaders/DecoratedPanelMaterial.tres" id="1_xyees"]
+[ext_resource type="Script" path="res://ui/scripts/StyleBoxDecorated.cs" id="2_daraj"]
+
+[sub_resource type="Resource" id="Resource_kpbsf"]
+script = ExtResource("1_s23n5")
+BackgroundColor = Color(0.105882, 0.2, 0.266667, 1)
+BorderColor = Color(0.429964, 0.302354, 0.190696, 1)
+BorderThickness = 3.0
+PolygonPoints = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
+
+[resource]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = 7.0
+content_margin_top = 7.0
+content_margin_right = 7.0
+content_margin_bottom = 7.0
+script = ExtResource("2_daraj")
+UseOutlineRectBorderPattern = true
+Animated = true
+Duration = 3.0
+HighlightColor = Color(0.537255, 0.384314, 0.25098, 1)
+Loop = true
+Mode = 1
+Material = ExtResource("1_xyees")
+BackgroundMode = 2
+BackgroundRelativeRect = Rect2(0, 0, 0, 0)
+BackgroundColor = Color(0.1144, 0.199333, 0.26, 1)
+BackgroundPolygon = SubResource("Resource_kpbsf")
+RelativeContentMargins = true
+AdditionalContentMarginLeft = 4.0
+AdditionalContentMarginTop = 4.0
+AdditionalContentMarginRight = 4.0
+AdditionalContentMarginBottom = 4.0
